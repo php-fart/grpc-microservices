@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package users.v1.request;
+
+option php_namespace = "GRPC\\Services\\Users\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Users\\v1";
+
+message ListRequest {
+  uint32 page = 1;
+  uint32 limit = 2;
+}
+
+message GetRequest {
+  string uuid = 1;
+}
+
+message CreateRequest {
+  message User {
+    string name = 1;
+    string email = 2;
+    string password = 3;
+  }
+
+  User user = 1;
+}

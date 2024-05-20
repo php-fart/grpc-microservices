@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package common.v1.dto;
+
+option php_namespace = "GRPC\\Services\\Common\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Common\\v1";
+
+message Exception {
+  string message = 1;
+  string code = 2;
+  string class = 3;
+}
