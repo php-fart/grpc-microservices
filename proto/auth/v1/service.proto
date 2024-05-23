@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package auth.v1;
+
+option php_namespace = "GRPC\\Services\\Auth\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Auth\\v1";
+
+import "auth/v1/request.proto";
+import "auth/v1/response.proto";
+import "common/v1/message.proto";
+
+service AuthService {
+  rpc Login (auth.v1.request.LoginRequest) returns (auth.v1.response.LoginResponse) {
+  }
+
+  rpc Logout (auth.v1.request.LogoutRequest) returns (common.v1.dto.Empty) {
+  }
+
+  rpc Register (auth.v1.request.RegisterRequest) returns (auth.v1.response.RegisterResponse) {
+  }
+}

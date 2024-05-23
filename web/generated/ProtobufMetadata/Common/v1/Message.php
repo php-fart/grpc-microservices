@@ -16,13 +16,13 @@ class Message
         }
         $pool->internalAddGeneratedFile(
             '
-ï¿½
-common/v1/message.proto
-common.v1.dto"9
+²
+common/v1/message.protocommon.v1.dto"9
 	Exception
 message (	
 code (	
-class (	B<ï¿½GRPC\\Services\\Common\\v1ï¿½GRPC\\ProtobufMetadata\\Common\\v1bproto3'
+class (	"
+EmptyB<ÊGRPC\\Services\\Common\\v1âGRPC\\ProtobufMetadata\\Common\\v1bproto3'
         , true);
 
         static::$is_initialized = true;

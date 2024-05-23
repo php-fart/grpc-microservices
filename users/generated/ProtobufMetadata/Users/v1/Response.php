@@ -17,14 +17,14 @@ class Response
         \GRPC\ProtobufMetadata\Users\v1\Message::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ï¿½
-users/v1/response.protousers.v1.response"1
-ListResponse!
-users (2.users.v1.dto.User"/
+‰
+users/v1/response.protousers.v1.response"/
 GetResponse 
 user (2.users.v1.dto.User"2
 CreateResponse 
-user (2.users.v1.dto.UserB:ï¿½GRPC\\Services\\Users\\v1ï¿½GRPC\\ProtobufMetadata\\Users\\v1bproto3'
+user (2.users.v1.dto.User"2
+UpdateResponse 
+user (2.users.v1.dto.UserB:ÊGRPC\\Services\\Users\\v1âGRPC\\ProtobufMetadata\\Users\\v1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -16,23 +16,23 @@ class Request
         }
         $pool->internalAddGeneratedFile(
             '
-ÔøΩ
-users/v1/request.protousers.v1.request"*
-ListRequest
-page (
-
-limit (
-"
+Å
+users/v1/request.protousers.v1.request"
 
 GetRequest
 uuid (	"z
-
-CreateRequest2
+CreateRequest2
 user (2$.users.v1.request.CreateRequest.User5
 User
 name (	
 email (	
-password (	B:ÔøΩGRPC\\Services\\Users\\v1ÔøΩGRPC\\ProtobufMetadata\\Users\\v1bproto3'
+password (	"y
+UpdateRequest2
+user (2$.users.v1.request.UpdateRequest.User4
+User
+uuid (	
+name (	
+password (	B: GRPC\\Services\\Users\\v1‚GRPC\\ProtobufMetadata\\Users\\v1bproto3'
         , true);
 
         static::$is_initialized = true;

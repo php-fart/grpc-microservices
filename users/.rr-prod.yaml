@@ -1,0 +1,16 @@
+version: '3'
+
+rpc:
+  listen: 'tcp://127.0.0.1:6001'
+
+include:
+  - ./.rr/.rr.grpc.yaml
+  - ./.rr/.rr.otel.yaml
+
+server:
+  command: 'php app.php'
+  relay: pipes
+
+logs:
+  level: ${RR_LOG_LEVEL:-debug}
+

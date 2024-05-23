@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package payment.v1;
+
+option php_namespace = "GRPC\\Services\\Payment\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Payment\\v1";
+
+import "payment/v1/request.proto";
+import "payment/v1/response.proto";
+
+service PaymentService {
+  rpc Charge(payment.v1.request.ChargeRequest) returns (payment.v1.response.ChargeResponse) {
+
+  }
+}

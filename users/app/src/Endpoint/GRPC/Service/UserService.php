@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Endpoint\GRPC\Service;
 
-use App\Application\Exception\UserNotFoundException;
 use GRPC\Services\Users\v1\User;
 use GRPC\Services\Users\v1\UsersServiceInterface;
 use Ramsey\Uuid\Uuid;
 use Spiral\RoadRunner\GRPC;
 
-final class UserService implements UsersServiceInterface
+final class UserService
 {
     public function List(
         GRPC\ContextInterface $ctx,
@@ -23,8 +22,20 @@ final class UserService implements UsersServiceInterface
         GRPC\ContextInterface $ctx,
         \GRPC\Services\Users\v1\GetRequest $in,
     ): \GRPC\Services\Users\v1\GetResponse {
+        $user = new User([
+            'uuid' => Uuid::uuid4()->toString(),
+            'name' => 'John Doe',
+            'email' => 'john_doe@site.com',
+        ]);
 
-        throw new UserNotFoundException();
+        $timestamp = new \Google\Protobuf\Timestamp();
+        $timestamp->fromDateTime(new \DateTime());
+        $user->setCreatedAt($timestamp);
+        $user->setUpdatedAt($timestamp);
+
+        return new \GRPC\Services\Users\v1\GetResponse([
+            'user' => $user,
+        ]);
     }
 
     public function Create(

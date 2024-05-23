@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package auth.v1.request;
+
+option php_namespace = "GRPC\\Services\\Auth\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Auth\\v1";
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LogoutRequest {
+  string token = 1;
+}
+
+message RegisterRequest {
+  string email = 1;
+  string name = 2;
+  string password = 3;
+}

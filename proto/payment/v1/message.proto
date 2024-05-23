@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package payment.v1.dto;
+
+option php_namespace = "GRPC\\Services\\Payment\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Payment\\v1";
+
+import "google/protobuf/timestamp.proto";
+
+message Money {
+  string currency_code = 1;
+  int64 amount = 2;
+}
+
+message Payment {
+  string description = 1;
+  string email = 2;
+  Money amount = 3;
+  string payment_method = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
+message Receipt {
+  string id = 1;
+  string transaction_id = 2;
+  Money amount = 3;
+  Money tax = 4;
+  google.protobuf.Timestamp paid_at = 5;
+}

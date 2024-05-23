@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace GRPC\Bootloader;
 
 use GRPC\Config\GRPCServicesConfig;
+use GRPC\Services\Auth\v1\AuthServiceClient;
+use GRPC\Services\Auth\v1\AuthServiceInterface;
+use GRPC\Services\Payment\v1\PaymentServiceClient;
+use GRPC\Services\Payment\v1\PaymentServiceInterface;
 use GRPC\Services\Users\v1\UsersServiceClient;
 use GRPC\Services\Users\v1\UsersServiceInterface;
 use Spiral\Boot\Bootloader\Bootloader;
@@ -41,6 +45,8 @@ class ServiceBootloader extends Bootloader
             [
                 'services' => [
                     UsersServiceClient::class => ['host' => $env->get('USERS_SERVICE_HOST', '127.0.0.1:9000')],
+                    AuthServiceClient::class => ['host' => $env->get('AUTH_SERVICE_HOST', '127.0.0.1:9001')],
+                    PaymentServiceClient::class => ['host' => $env->get('PAYMENT_SERVICE_HOST', '127.0.0.1:9002')],
                 ],
             ]
         );
@@ -66,6 +72,40 @@ class ServiceBootloader extends Bootloader
                 }
 
                 return $container->make(UsersServiceClient::class, ['core' => $core]);
+            }
+        );
+        $container->bindSingleton(
+            AuthServiceInterface::class,
+            static function(GRPCServicesConfig $config) use($container): AuthServiceInterface
+            {
+                $service = $config->getService(AuthServiceClient::class);
+                $core = new InterceptableCore(new ServiceClientCore(
+                    $service['host'],
+                    ['credentials' => $service['credentials'] ?? $config->getDefaultCredentials()]
+                ));
+
+                foreach ($config->getInterceptors() as $interceptor) {
+                    $core->addInterceptor($container->get($interceptor));
+                }
+
+                return $container->make(AuthServiceClient::class, ['core' => $core]);
+            }
+        );
+        $container->bindSingleton(
+            PaymentServiceInterface::class,
+            static function(GRPCServicesConfig $config) use($container): PaymentServiceInterface
+            {
+                $service = $config->getService(PaymentServiceClient::class);
+                $core = new InterceptableCore(new ServiceClientCore(
+                    $service['host'],
+                    ['credentials' => $service['credentials'] ?? $config->getDefaultCredentials()]
+                ));
+
+                foreach ($config->getInterceptors() as $interceptor) {
+                    $core->addInterceptor($container->get($interceptor));
+                }
+
+                return $container->make(PaymentServiceClient::class, ['core' => $core]);
             }
         );
     }

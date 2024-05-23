@@ -1,0 +1,10 @@
+version: '3'
+
+otel:
+  insecure: true
+  compress: false
+  client: http
+  exporter: otlp
+  service_name: ${OTEL_SERVICE_NAME:-php-user}
+  service_version: ${APP_VERSION:-1.0.0}
+  endpoint: ms-collector:4318

@@ -26,11 +26,11 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 4;</code>
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 5;</code>
      */
     protected $updated_at = null;
 
@@ -119,7 +119,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -138,7 +138,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
@@ -170,7 +170,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

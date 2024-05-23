@@ -17,16 +17,16 @@ class Message
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ï¿½
-users/v1/message.protousers.v1.dto"ï¿½
+þ
+users/v1/message.protousers.v1.dto"‘
 User
 uuid (	
 name (	
 email (	.
 
-created_at (2.google.protobuf.Timestamp.
+created_at (2.google.protobuf.Timestamp.
 
-updated_at (2.google.protobuf.TimestampB:ï¿½GRPC\\Services\\Users\\v1ï¿½GRPC\\ProtobufMetadata\\Users\\v1bproto3'
+updated_at (2.google.protobuf.TimestampB:ÊGRPC\\Services\\Users\\v1âGRPC\\ProtobufMetadata\\Users\\v1bproto3'
         , true);
 
         static::$is_initialized = true;

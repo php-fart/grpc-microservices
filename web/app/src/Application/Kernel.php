@@ -12,9 +12,11 @@ use Spiral\Debug\Bootloader\DumperBootloader;
 use Spiral\DotEnv\Bootloader\DotenvBootloader;
 use Spiral\Monolog\Bootloader\MonologBootloader;
 use Spiral\Nyholm\Bootloader\NyholmBootloader;
+use Spiral\OpenTelemetry\Bootloader\OpenTelemetryBootloader;
 use Spiral\Prototype\Bootloader\PrototypeBootloader;
 use Spiral\RoadRunnerBridge\Bootloader as RoadRunnerBridge;
 use Spiral\Scaffolder\Bootloader\ScaffolderBootloader;
+use Spiral\Sentry\Bootloader\SentryReporterBootloader;
 use Spiral\Tokenizer\Bootloader\TokenizerListenerBootloader;
 use Spiral\Validation\Bootloader\ValidationBootloader;
 use Spiral\Validator\Bootloader\ValidatorBootloader;
@@ -41,6 +43,14 @@ class Kernel extends \Spiral\Framework\Kernel
             MonologBootloader::class,
             YiiErrorHandlerBootloader::class,
             Bootloader\ExceptionHandlerBootloader::class,
+
+            OpenTelemetryBootloader::class,
+
+            // Sentry and Data collectors
+            SentryReporterBootloader::class,
+            Framework\DebugBootloader::class,
+            Framework\Debug\LogCollectorBootloader::class,
+            Framework\Debug\HttpCollectorBootloader::class,
 
             // Application specific logs
             Bootloader\LoggingBootloader::class,

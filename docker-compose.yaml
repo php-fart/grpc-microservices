@@ -1,0 +1,133 @@
+version: "3.7"
+
+services:
+  reverse-proxy:
+    container_name: ms-reverse-proxy
+    image: traefik:v2.9
+    command:
+      - "--accesslog"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--providers.file.directory=/configuration/"
+      - "--providers.file.watch=true"
+    ports:
+      - ${TRAEFIC_PORT_HTTP:-80}:80
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.buggregator-reverse-proxy.entrypoints=web"
+      - "traefik.http.routers.buggregator-reverse-proxy.rule=Host(`traefik.ms.localhost`)"
+      - "traefik.http.services.buggregator-reverse-proxy.loadbalancer.server.port=8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - ms-network
+    logging:
+      driver: none
+
+  web:
+    container_name: ms-web
+    build:
+      context: .
+      args:
+        SERVICE_NAME: web
+      dockerfile: .docker/php/Dockerfile
+    env_file:
+      - .env
+    environment:
+      DB_DATABASE: homestead
+      RR_LOG_LEVEL: ${RR_LOG_LEVEL:-debug}
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME:-php-web}
+    volumes:
+      - ./web:/app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ms-web.entrypoints=web"
+      - "traefik.http.routers.ms-web.rule=Host(`ms.localhost`)"
+      - "traefik.http.services.ms-web.loadbalancer.server.port=8080"
+    networks:
+      - ms-network
+
+  users:
+    container_name: ms-users
+    build:
+      context: .
+      args:
+        SERVICE_NAME: users
+      dockerfile: .docker/php/Dockerfile
+    env_file:
+      - .env
+    environment:
+      DB_DATABASE: users
+      RR_LOG_LEVEL: ${RR_LOG_LEVEL:-debug}
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME:-php-users}
+    volumes:
+      - ./users:/app
+    networks:
+      - ms-network
+
+  db:
+    container_name: ms-db
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_DB: homestead
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    restart: on-failure
+    networks:
+      - ms-network
+    logging:
+      driver: none
+
+  buggregator:
+    container_name: ms-buggregator
+    image: ghcr.io/buggregator/server:latest
+    restart: on-failure
+    ports:
+      - "9912:9912"
+      - "9913:9913"
+      - "1025:1025"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ms-buggregator.entrypoints=web"
+      - "traefik.http.routers.ms-buggregator.rule=Host(`buggregator.ms.localhost`)"
+      - "traefik.http.services.ms-buggregator.loadbalancer.server.port=8000"
+    networks:
+      - ms-network
+    logging:
+      driver: none
+
+  collector:
+    container_name: ms-collector
+    image: otel/opentelemetry-collector-contrib
+    command: [ "--config=/etc/otel-collector-config.yml" ]
+    volumes:
+      - ./.docker/otel/otel-collector-config.yml:/etc/otel-collector-config.yml
+    networks:
+      - ms-network
+  #    logging:
+  #      driver: none
+
+  zipkin:
+    container_name: ms-zipkin
+    image: openzipkin/zipkin-slim
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ms-zipkin.entrypoints=web"
+      - "traefik.http.routers.ms-zipkin.rule=Host(`zipkin.ms.localhost`)"
+      - "traefik.http.services.ms-zipkin.loadbalancer.server.port=9411"
+    networks:
+      - ms-network
+    logging:
+      driver: none
+
+networks:
+  ms-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.0.13.0/24

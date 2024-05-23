@@ -1,6 +1,8 @@
 version: '3'
+
 rpc:
     listen: 'tcp://127.0.0.1:6001'
+
 http:
     address: '0.0.0.0:8080'
     middleware:
@@ -16,6 +18,7 @@ http:
         debug: true
         supervisor:
             max_worker_memory: 100
+
 server:
     command: 'php app.php'
     relay: pipes

@@ -1,0 +1,35 @@
+version: '3'
+
+rpc:
+    listen: 'tcp://127.0.0.1:6001'
+
+http:
+    address: '0.0.0.0:8080'
+    middleware:
+        - gzip
+        - static
+    static:
+        dir: public
+        forbid:
+            - .php
+            - .htaccess
+    pool:
+        num_workers: 1
+        supervisor:
+            max_worker_memory: 100
+
+server:
+    command: 'php app.php'
+    relay: pipes
+
+logs:
+  level: ${RR_LOG_LEVEL:-debug}
+
+otel:
+  insecure: true
+  compress: false
+  client: http
+  exporter: otlp
+  service_name: ${OTEL_SERVICE_NAME:-php-web}
+  service_version: ${APP_VERSION:-1.0.0}
+  endpoint: ms-collector:4318

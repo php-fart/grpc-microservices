@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package auth.v1.dto;
+
+option php_namespace = "GRPC\\Services\\Auth\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Auth\\v1";
+
+import "google/protobuf/timestamp.proto";
+
+message Token {
+  string token = 1;
+  string type = 2; // auth, refresh, 2fa, password_reset
+  google.protobuf.Timestamp expires_at = 3;
+}

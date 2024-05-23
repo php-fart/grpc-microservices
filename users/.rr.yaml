@@ -1,12 +1,11 @@
 version: '3'
+
 rpc:
   listen: 'tcp://127.0.0.1:6001'
-grpc:
-  listen: 'tcp://127.0.0.1:9001'
-  proto:
-    - ../proto/users/v1/service.proto
-  pool:
-    debug: true
+
+include:
+  - ./.rr/.rr.grpc.yaml
+
 server:
   command: 'php app.php'
   relay: pipes

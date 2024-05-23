@@ -14,17 +14,6 @@ class UsersServiceClient implements UsersServiceInterface
     ) {
     }
 
-    public function List(ContextInterface $ctx, ListRequest $in): ListResponse
-    {
-        [$response, $status] = $this->core->callAction(UsersServiceInterface::class, '/'.self::NAME.'/List', [
-            'in' => $in,
-            'ctx' => $ctx,
-            'responseClass' => \GRPC\Services\Users\v1\ListResponse::class,
-        ]);
-
-        return $response;
-    }
-
     public function Get(ContextInterface $ctx, GetRequest $in): GetResponse
     {
         [$response, $status] = $this->core->callAction(UsersServiceInterface::class, '/'.self::NAME.'/Get', [
@@ -42,6 +31,17 @@ class UsersServiceClient implements UsersServiceInterface
             'in' => $in,
             'ctx' => $ctx,
             'responseClass' => \GRPC\Services\Users\v1\CreateResponse::class,
+        ]);
+
+        return $response;
+    }
+
+    public function Update(ContextInterface $ctx, UpdateRequest $in): UpdateResponse
+    {
+        [$response, $status] = $this->core->callAction(UsersServiceInterface::class, '/'.self::NAME.'/Update', [
+            'in' => $in,
+            'ctx' => $ctx,
+            'responseClass' => \GRPC\Services\Users\v1\UpdateResponse::class,
         ]);
 
         return $response;

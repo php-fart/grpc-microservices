@@ -15,8 +15,10 @@ use Spiral\Nyholm\Bootloader\NyholmBootloader;
 use Spiral\Prototype\Bootloader\PrototypeBootloader;
 use Spiral\RoadRunnerBridge\Bootloader as RoadRunnerBridge;
 use Spiral\Scaffolder\Bootloader\ScaffolderBootloader;
+use Spiral\Sentry\Bootloader\SentryReporterBootloader;
 use Spiral\Tokenizer\Bootloader\TokenizerListenerBootloader;
 use Spiral\YiiErrorHandler\Bootloader\YiiErrorHandlerBootloader;
+use Spiral\OpenTelemetry\Bootloader\OpenTelemetryBootloader;
 
 class Kernel extends \Spiral\Framework\Kernel
 {
@@ -38,8 +40,15 @@ class Kernel extends \Spiral\Framework\Kernel
             MonologBootloader::class,
             Bootloader\ExceptionHandlerBootloader::class,
 
+            OpenTelemetryBootloader::class,
+
             // Application specific logs
             Bootloader\LoggingBootloader::class,
+
+            // Sentry and Data collectors
+            SentryReporterBootloader::class,
+            Framework\DebugBootloader::class,
+            Framework\Debug\LogCollectorBootloader::class,
 
             // RoadRunner
             RoadRunnerBridge\LoggerBootloader::class,

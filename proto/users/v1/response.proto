@@ -7,14 +7,14 @@ option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Users\\v1";
 
 import "users/v1/message.proto";
 
-message ListResponse {
-  repeated users.v1.dto.User users = 1;
-}
-
 message GetResponse {
   users.v1.dto.User user = 1;
 }
 
 message CreateResponse {
+  users.v1.dto.User user = 1;
+}
+
+message UpdateResponse {
   users.v1.dto.User user = 1;
 }

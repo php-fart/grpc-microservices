@@ -10,3 +10,5 @@ message Exception {
   string code = 2;
   string class = 3;
 }
+
+message Empty {}

@@ -8,10 +8,14 @@ return [
     'namespace' => 'GRPC',
     'services' => [
         directory('root') . '/../proto/users/v1/service.proto',
+        directory('root') . '/../proto/auth/v1/service.proto',
+        directory('root') . '/../proto/payment/v1/service.proto',
         directory('root') . '/../proto/common/v1/message.proto',
     ],
     'servicesBasePath' => directory('root') . '/../proto',
     'interceptors' => [
         \App\Endpoint\GRPC\Interceptor\HandleExceptionsInterceptor::class,
+        \Internal\Shared\Interceptors\Incoming\ContextInterceptor::class,
+        \Internal\Shared\Interceptors\Incoming\OpenTelemetryInterceptor::class,
     ],
 ];

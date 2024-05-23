@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package payment.v1.request;
+
+option php_namespace = "GRPC\\Services\\Payment\\v1";
+option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Payment\\v1";
+
+import "payment/v1/message.proto";
+
+message ChargeRequest {
+  payment.v1.dto.Payment payment = 1;
+}

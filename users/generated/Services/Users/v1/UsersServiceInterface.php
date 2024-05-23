@@ -13,15 +13,6 @@ interface UsersServiceInterface extends GRPC\ServiceInterface
 
     /**
     * @param GRPC\ContextInterface $ctx
-    * @param \GRPC\Services\Users\v1\ListRequest $in
-    * @return \GRPC\Services\Users\v1\ListResponse
-    *
-    * @throws GRPC\Exception\InvokeException
-    */
-    public function List(GRPC\ContextInterface $ctx, \GRPC\Services\Users\v1\ListRequest $in): \GRPC\Services\Users\v1\ListResponse;
-
-    /**
-    * @param GRPC\ContextInterface $ctx
     * @param \GRPC\Services\Users\v1\GetRequest $in
     * @return \GRPC\Services\Users\v1\GetResponse
     *
@@ -37,4 +28,13 @@ interface UsersServiceInterface extends GRPC\ServiceInterface
     * @throws GRPC\Exception\InvokeException
     */
     public function Create(GRPC\ContextInterface $ctx, \GRPC\Services\Users\v1\CreateRequest $in): \GRPC\Services\Users\v1\CreateResponse;
+
+    /**
+    * @param GRPC\ContextInterface $ctx
+    * @param \GRPC\Services\Users\v1\UpdateRequest $in
+    * @return \GRPC\Services\Users\v1\UpdateResponse
+    *
+    * @throws GRPC\Exception\InvokeException
+    */
+    public function Update(GRPC\ContextInterface $ctx, \GRPC\Services\Users\v1\UpdateRequest $in): \GRPC\Services\Users\v1\UpdateResponse;
 }

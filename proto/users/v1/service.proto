@@ -9,12 +9,12 @@ import "users/v1/request.proto";
 import "users/v1/response.proto";
 
 service UsersService {
-  rpc List (users.v1.request.ListRequest) returns (users.v1.response.ListResponse) {
-  }
-
   rpc Get (users.v1.request.GetRequest) returns (users.v1.response.GetResponse) {
   }
 
   rpc Create (users.v1.request.CreateRequest) returns (users.v1.response.CreateResponse) {
+  }
+
+  rpc Update (users.v1.request.UpdateRequest) returns (users.v1.response.UpdateResponse) {
   }
 }

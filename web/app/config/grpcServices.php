@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 return [
     'interceptors' => [
+        \Internal\Shared\Interceptors\Outgoing\SendTraceContextInterceptor::class,
         \App\Application\GRPC\Interceptor\AuthInterceptor::class,
-        \App\Application\GRPC\Interceptor\ExceptionHandlerInterceptor::class,
+//        \Internal\Shared\Interceptors\ExceptionHandlerInterceptor::class,
     ],
 ];
