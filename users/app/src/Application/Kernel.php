@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Application;
 
+use App\Application\Bootloader\PersistenceBootloader;
+use App\Application\Bootloader\UserBootloader;
 use GRPC\Bootloader\ServiceBootloader;
 use Spiral\Boot\Bootloader\CoreBootloader;
 use Spiral\Bootloader as Framework;
@@ -16,6 +18,7 @@ use Spiral\Prototype\Bootloader\PrototypeBootloader;
 use Spiral\RoadRunnerBridge\Bootloader as RoadRunnerBridge;
 use Spiral\Scaffolder\Bootloader\ScaffolderBootloader;
 use Spiral\Sentry\Bootloader\SentryReporterBootloader;
+use Spiral\TemporalBridge\Bootloader\TemporalBridgeBootloader;
 use Spiral\Tokenizer\Bootloader\TokenizerListenerBootloader;
 use Spiral\YiiErrorHandler\Bootloader\YiiErrorHandlerBootloader;
 use Spiral\OpenTelemetry\Bootloader\OpenTelemetryBootloader;
@@ -74,6 +77,8 @@ class Kernel extends \Spiral\Framework\Kernel
 
             RoadRunnerBridge\GRPCBootloader::class,
 
+            TemporalBridgeBootloader::class,
+
             // Console commands
             Framework\CommandBootloader::class,
             RoadRunnerBridge\CommandBootloader::class,
@@ -81,10 +86,13 @@ class Kernel extends \Spiral\Framework\Kernel
             ScaffolderBootloader::class,
             RoadRunnerBridge\ScaffolderBootloader::class,
             CycleBridge\ScaffolderBootloader::class,
+            CycleBridge\EntityBehaviorBootloader::class,
 
             // Fast code prototyping
             PrototypeBootloader::class,
             ServiceBootloader::class,
+            UserBootloader::class,
+            PersistenceBootloader::class,
         ];
     }
 }

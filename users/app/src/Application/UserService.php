@@ -26,8 +26,9 @@ final readonly class UserService implements UserServiceInterface
 
     public function register(Email $email, Password $password): User
     {
-        $this->uniqueEmail->isSatisfiedBy($email)
-        or throw new EmailAlreadyExistsException();
+        if (!$this->uniqueEmail->isSatisfiedBy($email)) {
+            throw new EmailAlreadyExistsException();
+        }
 
         $user = $this->userFactory->create($email, $password);
         $this->em->persist($user)->run();

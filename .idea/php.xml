@@ -336,6 +336,13 @@
       <path value="$PROJECT_DIR$/web/vendor/sentry/sentry" />
       <path value="$PROJECT_DIR$/web/vendor/ms/grpc-shared" />
       <path value="$PROJECT_DIR$/users/vendor/ms/grpc-shared" />
+      <path value="$PROJECT_DIR$/users/vendor/temporal/sdk" />
+      <path value="$PROJECT_DIR$/users/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/users/vendor/spiral/temporal-bridge" />
+      <path value="$PROJECT_DIR$/users/vendor/roadrunner-php/version-checker" />
+      <path value="$PROJECT_DIR$/users/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/users/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/users/vendor/cycle/entity-behavior" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

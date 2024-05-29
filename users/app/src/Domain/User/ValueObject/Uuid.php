@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Domain\User\ValueObject;
 
 use Ramsey\Uuid\UuidInterface;
+use Temporal\Internal\Marshaller\Meta\Marshal;
 
 final readonly class Uuid implements \Stringable
 {
@@ -19,6 +20,7 @@ final readonly class Uuid implements \Stringable
     }
 
     public function __construct(
+        #[Marshal]
         private UuidInterface $uuid,
     ) {}
 
@@ -30,6 +32,6 @@ final readonly class Uuid implements \Stringable
 
     public function __toString()
     {
-        return $this->uuid->toString();
+        return (string) $this->uuid;
     }
 }

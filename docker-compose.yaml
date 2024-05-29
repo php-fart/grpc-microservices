@@ -60,6 +60,7 @@ services:
     env_file:
       - .env
     environment:
+      DB_CONNECTION: pgsql
       DB_DATABASE: users
       RR_LOG_LEVEL: ${RR_LOG_LEVEL:-debug}
       OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME:-php-users}
@@ -75,6 +76,11 @@ services:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_DB: homestead
       POSTGRES_PASSWORD: ${DB_PASSWORD}
+    healthcheck:
+      test: pg_isready -d $$POSTGRES_USER -U $$POSTGRES_USER
+      interval: 2s
+      timeout: 5s
+      start_period: 2s
     ports:
       - "5432:5432"
     restart: on-failure
@@ -122,6 +128,62 @@ services:
       - "traefik.http.services.ms-zipkin.loadbalancer.server.port=9411"
     networks:
       - ms-network
+    logging:
+      driver: none
+
+  adminer:
+    container_name: ms-adminer
+    image: adminer
+    restart: unless-stopped
+    environment:
+      ADMINER_DEFAULT_SERVER: ${ADMINER_DEFAULT_SERVER:-db}
+    networks:
+      - ms-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.adminer.entrypoints=web"
+      - "traefik.http.routers.adminer.rule=Host(`adminer.ms.localhost`)"
+    logging:
+      driver: none
+
+  temporal:
+    container_name: ms-temporal
+    environment:
+      DB: postgres12
+      DB_PORT: 5432
+      POSTGRES_USER: homestead
+      POSTGRES_PWD: secret
+      POSTGRES_SEEDS: db
+      DYNAMIC_CONFIG_FILE_PATH: config/dynamicconfig/development-sql.yaml
+    image: temporalio/auto-setup:1.22.5
+    volumes:
+      - ./.docker/temporalio:/etc/temporal/config/dynamicconfig
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - ms-network
+    logging:
+      driver: none
+
+  temporal-ui:
+    container_name: ms-temporal-ui
+    depends_on:
+      temporal:
+        condition: service_started
+    environment:
+      TEMPORAL_ADDRESS: temporal:7233
+      TEMPORAL_CORS_ORIGINS: http://localhost:3000
+    image: temporalio/ui
+    restart: unless-stopped
+    networks:
+      - ms-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.temporal.entrypoints=web"
+      - "traefik.http.routers.temporal.rule=Host(`temporal.ms.localhost`)"
+      - "traefik.http.services.temporal.loadbalancer.server.port=8080"
     logging:
       driver: none
 

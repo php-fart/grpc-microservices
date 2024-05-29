@@ -2,6 +2,14 @@ FROM ghcr.io/roadrunner-server/roadrunner:2023.3.12 as rr
 
 FROM ghcr.io/spiral/php-grpc:8.2 as backend
 
+RUN apk add --no-cache \
+  openssh-client \
+  ca-certificates \
+  postgresql-dev
+
+RUN docker-php-ext-install \
+        pgsql pdo_pgsql
+
 RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
 
 ARG SERVICE_NAME

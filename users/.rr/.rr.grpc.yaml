@@ -3,5 +3,5 @@ version: '3'
 grpc:
   listen: 'tcp://0.0.0.0:9001'
   proto:
-    - ../proto/users/v1/service.proto
-    - ../proto/auth/v1/service.proto
+    - ../../proto/users/v1/service.proto
+#    - ../../proto/auth/v1/service.proto

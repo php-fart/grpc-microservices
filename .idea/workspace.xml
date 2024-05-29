@@ -4,76 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da21b61-86a8-48d5-9bf8-f02e6f6ccfac" name="Changes" comment="init project">
-      <change afterPath="$PROJECT_DIR$/.docker/otel/otel-collector-config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/microservices.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/common/v1/message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/common/v1/message.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/users/v1/request.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/users/v1/request.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/users/v1/response.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/users/v1/response.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/users/v1/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/users/v1/service.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/.rr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users/.rr.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/config/grpc.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/config/grpc.php" afterDir="false" />
+    <list default="true" id="2da21b61-86a8-48d5-9bf8-f02e6f6ccfac" name="Changes" comment="stream part 2">
+      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/.rr-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users/.rr-prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/.rr/.rr.grpc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users/.rr/.rr.grpc.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/config/migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/config/migration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Application/Bootloader/PersistenceBootloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Application/Bootloader/PersistenceBootloader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/app/src/Application/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Application/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Interceptor/HandleExceptionsInterceptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Interceptor/HandleExceptionsInterceptor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Service/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Application/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Application/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Domain/User/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Domain/User/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Domain/User/ValueObject/Uuid.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Domain/User/ValueObject/Uuid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Infrastructure/CycleOrm/Factory/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Infrastructure/CycleOrm/Factory/UserFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/users/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/users/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Bootloader/ServiceBootloader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Config/GRPCServicesConfig.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Common/v1/Message.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Message.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Request.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Response.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Service.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Common/v1/Exception.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateRequest/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateRequest_User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/GetRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/GetResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/ListRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/ListResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UsersServiceClient.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UsersServiceInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.rr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/web/.rr.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/config/grpc.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/config/grpc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/config/grpcServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/config/grpcServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/src/Application/GRPC/Interceptor/ExceptionHandlerInterceptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Incoming/ExceptionHandlerInterceptor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/src/Application/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/src/Application/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Controller/User/ShowAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Controller/User/ShowAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Bootloader/ServiceBootloader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Config/GRPCServicesConfig.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Common/v1/Message.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Message.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Request.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Response.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Service.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Common/v1/Exception.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateRequest/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateRequest_User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/GetRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/GetResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/ListRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/ListResponse.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UsersServiceClient.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UsersServiceInterface.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +47,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/users/vendor/spiral/roadrunner-grpc/src/Context.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/users/vendor/spiral/temporal-bridge/src/Bootloader/TemporalBridgeBootloader.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/web/vendor/google/protobuf/src/Google/Protobuf/Any.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="WSL">
@@ -427,6 +376,13 @@
       <path value="$PROJECT_DIR$/web/vendor/sentry/sentry" />
       <path value="$PROJECT_DIR$/web/vendor/ms/grpc-shared" />
       <path value="$PROJECT_DIR$/users/vendor/ms/grpc-shared" />
+      <path value="$PROJECT_DIR$/users/vendor/temporal/sdk" />
+      <path value="$PROJECT_DIR$/users/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/users/vendor/spiral/temporal-bridge" />
+      <path value="$PROJECT_DIR$/users/vendor/roadrunner-php/version-checker" />
+      <path value="$PROJECT_DIR$/users/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/users/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/users/vendor/cycle/entity-behavior" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -446,7 +402,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu-22.04/root/repos/microservices/proto/payment/v1",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu-22.04/root/repos/microservices/users",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -458,11 +414,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\users\app\src\Application" />
+      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\.docker" />
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\proto\payment\v1" />
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\proto\auth\v1" />
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\users\app\config" />
-      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\lib\grpc-shared" />
-      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\lib\grpc-shared\src\Interceptors\Incomming" />
@@ -488,7 +444,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -500,7 +458,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PS-241.15989.102" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.17011.119" />
       </set>
     </attachedChunks>
   </component>
@@ -510,6 +468,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init project" />
+    <MESSAGE value="stream part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="stream part 2" />
   </component>
 </project>

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\CycleOrm\Factory;
 
+use App\Domain\User\PasswordHasherInterface;
 use App\Domain\User\User;
 use App\Domain\User\UserFactoryInterface;
 use App\Domain\User\ValueObject\Email;
@@ -15,6 +16,7 @@ final readonly class UserFactory implements UserFactoryInterface
 {
     public function __construct(
         private ORMInterface $orm,
+        private PasswordHasherInterface $passwords,
     ) {}
 
     public function create(Email $email, Password $password): User
@@ -22,7 +24,7 @@ final readonly class UserFactory implements UserFactoryInterface
         return $this->orm->make(User::class, [
             'uuid' => Uuid::generate(),
             'email' => $email,
-            'password' => $password,
+            'password' => $this->passwords->hash($password),
         ]);
     }
 }

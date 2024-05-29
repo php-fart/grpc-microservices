@@ -2,24 +2,15 @@
 
 declare(strict_types=1);
 
-/**
- * Migrations configuration.
- *
- * @link https://spiral.dev/docs/basics-orm#migrations
- */
+use Cycle\Schema\Generator\Migrations\Strategy\MultipleFilesStrategy;
+
 return [
-    /**
-     * Directory to store migration files
-     */
+
     'directory' => directory('app') . 'migrations/',
 
-    /**
-     * Table name to store information about migrations status (per database)
-     */
     'table' => 'migrations',
 
-    /**
-     * When set to true no confirmation will be requested on migration run.
-     */
+    'strategy' => MultipleFilesStrategy::class,
+
     'safe' => env('APP_ENV') === 'local',
 ];
