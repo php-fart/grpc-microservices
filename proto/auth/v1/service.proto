@@ -18,4 +18,7 @@ service AuthService {
 
   rpc Register (auth.v1.request.RegisterRequest) returns (auth.v1.response.RegisterResponse) {
   }
+
+  rpc Me (auth.v1.request.MeRequest) returns (auth.v1.response.MeResponse) {
+  }
 }

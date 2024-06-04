@@ -76,6 +76,10 @@ services:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_DB: homestead
       POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - type: bind
+        source: ./.docker-data/db
+        target: /var/lib/postgresql/data
     healthcheck:
       test: pg_isready -d $$POSTGRES_USER -U $$POSTGRES_USER
       interval: 2s

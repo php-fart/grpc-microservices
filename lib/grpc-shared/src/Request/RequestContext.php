@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Internal\Shared\Request;
+namespace Internal\Shared\gRPC\Request;
 
 use Spiral\RoadRunner\GRPC\ContextInterface;
 
@@ -75,10 +75,9 @@ final readonly class RequestContext implements ContextInterface
 
     private function withMetadata(string $key, array $value): ContextInterface
     {
-        $metadata = $this->getMetadata();
+        $metadata = $this->getMetadata($key);
         $metadata[$key] = $value;
 
-        trap($metadata);
         return new self($this->context->withValue('metadata', $metadata));
     }
 }

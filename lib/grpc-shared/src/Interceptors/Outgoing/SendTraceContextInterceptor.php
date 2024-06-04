@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Internal\Shared\Interceptors\Outgoing;
+namespace Internal\Shared\gRPC\Interceptors\Outgoing;
 
-use Internal\Shared\Request\RequestContext;
+use Internal\Shared\gRPC\Request\RequestContext;
 use Spiral\Core\Attribute\Proxy;
 use Spiral\Core\CoreInterceptorInterface;
 use Spiral\Core\CoreInterface;

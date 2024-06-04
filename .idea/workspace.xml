@@ -4,24 +4,192 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da21b61-86a8-48d5-9bf8-f02e6f6ccfac" name="Changes" comment="stream part 2">
-      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="2da21b61-86a8-48d5-9bf8-f02e6f6ccfac" name="Changes" comment="stream part 3">
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/bin/console" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/bin/protoc-gen-php-grpc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/AuthServiceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Payment/v1/PaymentServiceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/UsersServiceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/CommandExecutor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Console/GeneratorCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Exception/CompileException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/BootloaderGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/Annotation/DefaultValue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/Annotation/DocType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/Annotation/Event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/Annotation/Guarded.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/Annotation/Internal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/Annotation/Optional.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/Annotation/Type.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/ClassPropertiesGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/JsonSerializationGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Command/PropertyType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/CommandClassGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/ConfigGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/EnumClassGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/GeneratedMessagesFixer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/GeneratorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Message/MessageClass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Message/MessageClassParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/Message/MessageCommentsParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/ServiceClientGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/ServiceClientTestsGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/Generators/ServiceInterfaceAttributesGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/AnnotationsParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/AttributesParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/ClassDeclaration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/ClassDeclarationFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/ClassTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/BuiltInType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/ClassType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/DateTime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/EnumClassType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/Interval.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/RepeatableType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/Timestamp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/Type.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/PHP/Property/TypeFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/ProtoCompiler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/generator/ProtocCommandBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Attribute/Guarded.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Attribute/Internal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/migrations/20240604.183640_0_0_default_create_auth_tokens.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Application/Bootloader/AppBootloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Application/Bootloader/AuthBootloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Application/Exception/AuthException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Application/Exception/PasswordIncorrectException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Application/Security/OrmActorProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Exception/UnauthorizedException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Interceptor/GuardInterceptor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Mapper/TimestampMapper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Mapper/UserService/UserMapper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Service/AuthService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/app/config/grpc-services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Controller/Auth/LoginAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Request/Auth/LoginRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/.rr-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users/.rr-prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/grpc-shared/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Incoming/ContextInterceptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Incoming/ContextInterceptor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Incoming/ExceptionHandlerInterceptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Incoming/ExceptionHandlerInterceptor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Incoming/OpenTelemetryInterceptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Incoming/OpenTelemetryInterceptor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Outgoing/SendTraceContextInterceptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Interceptors/Outgoing/SendTraceContextInterceptor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/grpc-shared/src/Request/RequestContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Request/RequestContext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/auth/v1/request.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/auth/v1/request.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/auth/v1/response.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/auth/v1/response.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/auth/v1/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/auth/v1/service.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/.rr/.rr.grpc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users/.rr/.rr.grpc.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/config/migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/config/migration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/src/Application/Bootloader/PersistenceBootloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Application/Bootloader/PersistenceBootloader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/config/grpc.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/config/grpc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/config/grpcServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/config/grpcServices.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/app/src/Application/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Application/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/app/src/Application/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Application/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/src/Domain/User/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Domain/User/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/src/Domain/User/ValueObject/Uuid.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Domain/User/ValueObject/Uuid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/app/src/Infrastructure/CycleOrm/Factory/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Infrastructure/CycleOrm/Factory/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Domain/User/UserServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Domain/User/UserServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Domain/User/ValueObject/Password.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Domain/User/ValueObject/Password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/app/src/Endpoint/GRPC/Service/UserService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/users/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/users/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Bootloader/ServiceBootloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Bootloader/ServiceBootloader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Config/GRPCServicesConfig.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Auth/v1/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Auth/v1/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Auth/v1/Request.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Auth/v1/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Auth/v1/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Auth/v1/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Common/v1/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Common/v1/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Payment/v1/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Payment/v1/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Payment/v1/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Payment/v1/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Payment/v1/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Payment/v1/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Payment/v1/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Payment/v1/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Users/v1/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Users/v1/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Users/v1/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/ProtobufMetadata/Users/v1/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Users/v1/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/AuthServiceClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/AuthServiceClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/AuthServiceInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/LoginRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/LoginResponse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/LogoutRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/MeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/RegisterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/RegisterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/RegisterResponse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Auth/v1/Token.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Common/v1/Exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Common/v1/Exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Common/v1/PBEmpty.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Payment/v1/ChargeRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Payment/v1/ChargeResponse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Payment/v1/Money.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Payment/v1/Money.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Payment/v1/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Payment/v1/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Payment/v1/PaymentServiceClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Payment/v1/PaymentServiceClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Payment/v1/PaymentServiceInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Payment/v1/Receipt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateRequest/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateRequest_User.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/CreateRequest_User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/CreateResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/CreateResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/GetRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/GetRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/GetResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/GetResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UpdateRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UpdateRequest/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/UpdateRequest/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UpdateRequest_User.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/UpdateRequest_User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UpdateResponse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UsersServiceClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/UsersServiceClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/generated/Services/Users/v1/UsersServiceInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/config/grpcServices.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/src/Application/GRPC/Interceptor/AuthInterceptor.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/src/Application/GRPC/Interceptor/AuthInterceptor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/src/Application/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/src/Application/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Controller/User/ShowAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Controller/User/ShowAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Middleware/SimpleAuthMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/src/Endpoint/Http/Middleware/SimpleAuthMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Bootloader/ServiceBootloader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Config/GRPCServicesConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/src/Config/GRPCServicesConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Auth/v1/Message.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Auth/v1/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Auth/v1/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Auth/v1/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/ProtobufMetadata/Auth/v1/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Auth/v1/Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Common/v1/Message.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Payment/v1/Message.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Payment/v1/Request.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Payment/v1/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Payment/v1/Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Message.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Request.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/ProtobufMetadata/Users/v1/Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/AuthServiceClient.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/AuthServiceInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/LoginRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/LoginRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/LoginResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/LoginResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/LogoutRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/LogoutRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/RegisterRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/RegisterResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/RegisterResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Auth/v1/Token.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/Token.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Common/v1/Exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Common/v1/PBEmpty.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Common/v1/PBEmpty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Payment/v1/ChargeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Payment/v1/ChargeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Payment/v1/ChargeResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Payment/v1/ChargeResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Payment/v1/Money.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Payment/v1/Payment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Payment/v1/PaymentServiceClient.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Payment/v1/PaymentServiceInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Payment/v1/Receipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Payment/v1/Receipt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/CreateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateRequest/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/CreateRequest/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateRequest_User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/CreateResponse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/GetRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/GetResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Auth/v1/MeResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/UpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UpdateRequest/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UpdateRequest_User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UpdateResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/grpc-shared/generated/GRPC/Services/Users/v1/UpdateResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UsersServiceClient.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/generated/Services/Users/v1/UsersServiceInterface.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -374,7 +542,6 @@
       <path value="$PROJECT_DIR$/web/vendor/jean85/pretty-package-versions" />
       <path value="$PROJECT_DIR$/web/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/web/vendor/sentry/sentry" />
-      <path value="$PROJECT_DIR$/web/vendor/ms/grpc-shared" />
       <path value="$PROJECT_DIR$/users/vendor/ms/grpc-shared" />
       <path value="$PROJECT_DIR$/users/vendor/temporal/sdk" />
       <path value="$PROJECT_DIR$/users/vendor/nesbot/carbon" />
@@ -383,6 +550,7 @@
       <path value="$PROJECT_DIR$/users/vendor/react/promise" />
       <path value="$PROJECT_DIR$/users/vendor/carbonphp/carbon-doctrine-types" />
       <path value="$PROJECT_DIR$/users/vendor/cycle/entity-behavior" />
+      <path value="$PROJECT_DIR$/web/vendor/ms/grpc-shared" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -402,7 +570,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu-22.04/root/repos/microservices/users",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu-22.04/root/repos/microservices/lib/grpc-shared/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -414,11 +582,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\lib\grpc-shared\src" />
+      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\lib\grpc-shared" />
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\users\app\src\Application" />
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\.docker" />
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\proto\payment\v1" />
-      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\proto\auth\v1" />
-      <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\users\app\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu-22.04\root\repos\microservices\lib\grpc-shared\src\Interceptors\Incomming" />
@@ -469,6 +637,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
     <MESSAGE value="stream part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="stream part 2" />
+    <MESSAGE value="stream part 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="stream part 3" />
   </component>
 </project>

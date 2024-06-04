@@ -22,7 +22,7 @@ final readonly class SimpleAuthMiddleware implements MiddlewareInterface
         ServerRequestInterface $request,
         RequestHandlerInterface $handler,
     ): ResponseInterface {
-        $authKey = $request->getHeaderLine('X-Auth-Key') ?? null;
+        $authKey = $request->getHeaderLine('X-Auth-Token') ?? null;
 
         return $this->container->runScope([
             AuthKeyInterface::class => new AuthKey($authKey),

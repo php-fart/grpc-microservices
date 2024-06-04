@@ -4,57 +4,48 @@ declare(strict_types=1);
 
 namespace App\Endpoint\GRPC\Service;
 
-use GRPC\Services\Users\v1\User;
+use App\Domain\User\UserServiceInterface;
+use App\Domain\User\ValueObject\Uuid;
+use App\Endpoint\GRPC\Mapper\UserService\UserMapper;
+use GRPC\Services\Users\v1\CreateRequest;
+use GRPC\Services\Users\v1\CreateResponse;
+use GRPC\Services\Users\v1\GetRequest;
+use GRPC\Services\Users\v1\GetResponse;
+use GRPC\Services\Users\v1\UpdateRequest;
+use GRPC\Services\Users\v1\UpdateResponse;
 use GRPC\Services\Users\v1\UsersServiceInterface;
-use Ramsey\Uuid\Uuid;
+use Internal\Shared\gRPC\Attribute\Guarded;
+use Spiral\Auth\AuthContextInterface;
+use Spiral\Core\Attribute\Proxy;
 use Spiral\RoadRunner\GRPC;
 
-final class UserService
+final readonly class UserService implements UsersServiceInterface
 {
-    public function List(
-        GRPC\ContextInterface $ctx,
-        \GRPC\Services\Users\v1\ListRequest $in,
-    ): \GRPC\Services\Users\v1\ListResponse {
-        return new \GRPC\Services\Users\v1\ListResponse();
-    }
+    public function __construct(
+        private UserServiceInterface $usersService,
+        private UserMapper $userMapper,
+        #[Proxy] private AuthContextInterface $authContext,
+    ) {}
 
-    public function Get(
-        GRPC\ContextInterface $ctx,
-        \GRPC\Services\Users\v1\GetRequest $in,
-    ): \GRPC\Services\Users\v1\GetResponse {
-        $user = new User([
-            'uuid' => Uuid::uuid4()->toString(),
-            'name' => 'John Doe',
-            'email' => 'john_doe@site.com',
-        ]);
+    #[Guarded]
+    public function Get(GRPC\ContextInterface $ctx, GetRequest $in): GetResponse
+    {
+        $user = $this->usersService->getUser(Uuid::fromString($in->getUuid()));
 
-        $timestamp = new \Google\Protobuf\Timestamp();
-        $timestamp->fromDateTime(new \DateTime());
-        $user->setCreatedAt($timestamp);
-        $user->setUpdatedAt($timestamp);
-
-        return new \GRPC\Services\Users\v1\GetResponse([
-            'user' => $user,
+        return new GetResponse([
+            'user' => $this->userMapper->toMessage($user),
         ]);
     }
 
-    public function Create(
-        GRPC\ContextInterface $ctx,
-        \GRPC\Services\Users\v1\CreateRequest $in,
-    ): \GRPC\Services\Users\v1\CreateResponse {
-        $user = new User([
-            'uuid' => Uuid::uuid4()->toString(),
-            'name' => $in->getUser()->getName(),
-            'email' => $in->getUser()->getEmail(),
-        ]);
+    #[Guarded]
+    public function Create(GRPC\ContextInterface $ctx, CreateRequest $in): CreateResponse
+    {
+        // TODO: Implement Create() method.
+    }
 
-        $timestamp = new \Google\Protobuf\Timestamp();
-        $timestamp->fromDateTime(new \DateTime());
-        $user->setCreatedAt($timestamp);
-        $user->setUpdatedAt($timestamp);
-
-        return new \GRPC\Services\Users\v1\CreateResponse([
-            'user' => $user,
-        ]);
+    #[Guarded]
+    public function Update(GRPC\ContextInterface $ctx, UpdateRequest $in): UpdateResponse
+    {
+        // TODO: Implement Update() method.
     }
 }

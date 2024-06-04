@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Application\GRPC\Interceptor;
 
 use App\Application\Auth\AuthKeyInterface;
+use Internal\Shared\gRPC\Request\RequestContext;
 use Spiral\Core\Attribute\Proxy;
 use Spiral\Core\CoreInterceptorInterface;
 use Spiral\Core\CoreInterface;
-use Spiral\RoadRunner\GRPC\Context;
 
 final class AuthInterceptor implements CoreInterceptorInterface
 {
@@ -18,11 +18,9 @@ final class AuthInterceptor implements CoreInterceptorInterface
 
     public function process(string $controller, string $action, array $parameters, CoreInterface $core): mixed
     {
-        /** @var Context $context */
+        /** @var RequestContext $context */
         $context = $parameters['ctx'];
-        $metadata = $context->getValue('metadata') ?? [];
-        $metadata['auth-key'] = [$this->key->getKey()];
-        $parameters['ctx'] = $context->withValue('metadata', $metadata);
+        $parameters['ctx'] = $context->withAuthToken($this->key->getKey());
 
         return $core->callAction($controller, $action, $parameters);
     }

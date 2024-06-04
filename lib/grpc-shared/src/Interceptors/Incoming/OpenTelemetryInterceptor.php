@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Internal\Shared\Interceptors\Incoming;
+namespace Internal\Shared\gRPC\Interceptors\Incoming;
 
-use Internal\Shared\Request\RequestContext;
+use Internal\Shared\gRPC\Request\RequestContext;
 use Spiral\Core\CoreInterceptorInterface;
 use Spiral\Core\CoreInterface;
 use Spiral\Telemetry\TraceKind;

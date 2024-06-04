@@ -1,37 +1,47 @@
 {
-    "name": "ms/grpc-shared",
-    "description": "This is shared package",
-    "keywords": [],
-    "homepage": "https://github.com/spiral/framework",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "butschster",
-            "email": "butschster@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.2",
-        "ext-grpc": "*",
-        "grpc/grpc": "^1.42",
-        "spiral/boot": "^3.7",
-        "spiral/hmvc": "^3.7",
-        "spiral/files": "^3.7",
-        "spiral/console": "^3.7",
-        "spiral/auth": "^3.7",
-        "spiral/telemetry": "^3.7",
-        "spiral-packages/cqrs": "^2.0",
-        "spiral/roadrunner-grpc": "^3.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Internal\\Shared\\": "src"
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "ms/grpc-shared",
+  "description": "This is shared package",
+  "keywords": [],
+  "homepage": "https://github.com/spiral/framework",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "butschster",
+      "email": "butschster@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "ext-grpc": "*",
+    "grpc/grpc": "^1.42",
+    "spiral/boot": "^3.7",
+    "spiral/hmvc": "^3.7",
+    "spiral/files": "^3.7",
+    "spiral/console": "^3.7",
+    "spiral/auth": "^3.7",
+    "spiral/telemetry": "^3.7",
+    "spiral-packages/cqrs": "^2.0",
+    "spiral/roadrunner-grpc": "^3.0",
+    "spiral/roadrunner-bridge": "^3.6"
+  },
+  "require-dev": {
+    "spiral/reactor": "^3.13",
+    "nikic/php-parser": "^v4.19",
+    "symfony/console": "^7.0",
+    "spiral/roadrunner-cli": "^2.5",
+    "doctrine/annotations": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Internal\\Shared\\gRPC\\": "src",
+      "GRPC\\": "generated/GRPC",
+      "Generator\\": "generator"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

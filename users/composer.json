@@ -22,10 +22,10 @@
         "ext-grpc": "*",
         "ext-mbstring": "*",
         "ext-sockets": "*",
+        "cycle/entity-behavior": "^1.2",
         "grpc/grpc": "^1.42",
         "guzzlehttp/promises": "^2.0",
-        "ms/grpc-shared": "*",
-        "cycle/entity-behavior": "^1.2",
+        "ms/grpc-shared": "dev-master",
         "open-telemetry/exporter-otlp": "^0.0.17",
         "php-http/httplug": "^2.4",
         "spiral/cycle-bridge": "^2.5",
@@ -45,8 +45,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/src",
-            "GRPC\\": "generated"
+            "App\\": "app/src"
         }
     },
     "autoload-dev": {

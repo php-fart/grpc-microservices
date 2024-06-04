@@ -6,6 +6,7 @@ option php_namespace = "GRPC\\Services\\Auth\\v1";
 option php_metadata_namespace = "GRPC\\ProtobufMetadata\\Auth\\v1";
 
 import "auth/v1/message.proto";
+import "users/v1/message.proto";
 
 message LoginResponse {
   auth.v1.dto.Token token = 1;
@@ -13,4 +14,8 @@ message LoginResponse {
 
 message RegisterResponse {
   auth.v1.dto.Token token = 1;
+}
+
+message MeResponse {
+  users.v1.dto.User user = 1;
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Endpoint\Http\Controller\User;
 
 use GRPC\Services\Users\v1\UsersServiceInterface;
-use Internal\Shared\Request\RequestContext;
+use Internal\Shared\gRPC\Request\RequestContext;
 use Ramsey\Uuid\Uuid;
 use Spiral\RoadRunner\GRPC\Context;
 use Spiral\Router\Annotation\Route;
@@ -18,8 +18,7 @@ final class ShowAction
         string $uuid,
     ): array {
         $response = $users->Get(
-            RequestContext::create()
-                ->withAuthToken('1234567890'),
+            RequestContext::create(),
             new \GRPC\Services\Users\v1\GetRequest([
                 'uuid' => Uuid::fromString($uuid)->toString(),
             ]),

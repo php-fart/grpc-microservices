@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace App\Application;
 
+use App\Application\Bootloader\AppBootloader;
+use App\Application\Bootloader\AuthBootloader;
 use App\Application\Bootloader\PersistenceBootloader;
 use App\Application\Bootloader\UserBootloader;
-use GRPC\Bootloader\ServiceBootloader;
+use Internal\Shared\gRPC\Bootloader\ServiceBootloader;
 use Spiral\Boot\Bootloader\CoreBootloader;
 use Spiral\Bootloader as Framework;
 use Spiral\Cycle\Bootloader as CycleBridge;
@@ -72,6 +74,7 @@ class Kernel extends \Spiral\Framework\Kernel
             CycleBridge\SchemaBootloader::class,
             CycleBridge\CycleOrmBootloader::class,
             CycleBridge\AnnotatedBootloader::class,
+            CycleBridge\AuthTokensBootloader::class,
 
             NyholmBootloader::class,
 
@@ -90,9 +93,12 @@ class Kernel extends \Spiral\Framework\Kernel
 
             // Fast code prototyping
             PrototypeBootloader::class,
-            ServiceBootloader::class,
             UserBootloader::class,
             PersistenceBootloader::class,
+            AuthBootloader::class,
+            ServiceBootloader::class,
+
+            AppBootloader::class,
         ];
     }
 }

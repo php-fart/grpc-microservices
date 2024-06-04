@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace App\Application;
 
 use App\Application\Exception\EmailAlreadyExistsException;
+use App\Application\Exception\PasswordIncorrectException;
+use App\Application\Exception\UserNotFoundException;
+use App\Domain\User\PasswordHasherInterface;
 use App\Domain\User\Specification\UniqueEmailSpecificationInterface;
 use App\Domain\User\User;
 use App\Domain\User\UserFactoryInterface;
@@ -19,6 +22,7 @@ final readonly class UserService implements UserServiceInterface
 {
     public function __construct(
         private UserFactoryInterface $userFactory,
+        private PasswordHasherInterface $passwordHasher,
         private UserRepositoryInterface $users,
         private UniqueEmailSpecificationInterface $uniqueEmail,
         private EntityManagerInterface $em,
@@ -36,9 +40,24 @@ final readonly class UserService implements UserServiceInterface
         return $user;
     }
 
-    public function login(Email $email, string $password): void
+    public function login(Email $email, Password $password): User
     {
-        // TODO: Implement login() method.
+        $user = $this->users->findByEmail($email);
+
+        if (!$user) {
+            throw new UserNotFoundException();
+        }
+
+        // Check is user active
+        // Check is banned
+        // Check is deleted
+        // Check is email confirmed
+
+        if (!$this->passwordHasher->validate($password, $user->password)) {
+            throw new PasswordIncorrectException();
+        }
+
+        return $user;
     }
 
     public function logout(string $token): void

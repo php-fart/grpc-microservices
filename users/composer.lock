@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "494b0226bee6bc7d34ff520d44ee2306",
+    "content-hash": "2b72d59fa73d1ccaa9b7a3ae7a3f14bb",
     "packages": [
         {
             "name": "brick/math",
@@ -2012,7 +2012,7 @@
             "dist": {
                 "type": "path",
                 "url": "../lib/grpc-shared",
-                "reference": "2e85e101130c50e3afcf6d5174e361c7cc26e615"
+                "reference": "04a30d82a7bbb6ac5bf2b2976f6805b56c2d26f3"
             },
             "require": {
                 "ext-grpc": "*",
@@ -2024,13 +2024,23 @@
                 "spiral/console": "^3.7",
                 "spiral/files": "^3.7",
                 "spiral/hmvc": "^3.7",
+                "spiral/roadrunner-bridge": "^3.6",
                 "spiral/roadrunner-grpc": "^3.0",
                 "spiral/telemetry": "^3.7"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^2.0",
+                "nikic/php-parser": "^v4.19",
+                "spiral/reactor": "^3.13",
+                "spiral/roadrunner-cli": "^2.5",
+                "symfony/console": "^7.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Internal\\Shared\\": "src"
+                    "Internal\\Shared\\gRPC\\": "src",
+                    "GRPC\\": "generated/GRPC",
+                    "Generator\\": "generator"
                 }
             },
             "license": [

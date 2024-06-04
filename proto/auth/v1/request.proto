@@ -10,6 +10,10 @@ message LoginRequest {
   string password = 2;
 }
 
+message MeRequest {
+  string token = 1;
+}
+
 message LogoutRequest {
   string token = 1;
 }

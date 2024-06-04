@@ -20,7 +20,7 @@ final readonly class Password implements \Stringable
         return new self($password);
     }
 
-    private function __construct(
+    final public function __construct(
         private string $password,
     ) {}
 

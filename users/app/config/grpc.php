@@ -15,7 +15,8 @@ return [
     'servicesBasePath' => directory('root') . '/../proto',
     'interceptors' => [
         \App\Endpoint\GRPC\Interceptor\HandleExceptionsInterceptor::class,
-        \Internal\Shared\Interceptors\Incoming\ContextInterceptor::class,
-        \Internal\Shared\Interceptors\Incoming\OpenTelemetryInterceptor::class,
+        \Internal\Shared\gRPC\Interceptors\Incoming\ContextInterceptor::class,
+        \App\Endpoint\GRPC\Interceptor\GuardInterceptor::class,
+        \Internal\Shared\gRPC\Interceptors\Incoming\OpenTelemetryInterceptor::class,
     ],
 ];

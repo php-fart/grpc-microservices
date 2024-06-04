@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Internal\Shared\Interceptors\Incoming;
+namespace Internal\Shared\gRPC\Interceptors\Incoming;
 
 use App\Application\Exception\NotFoundException;
 use Google\Rpc\Status;
@@ -35,6 +35,7 @@ final class ExceptionHandlerInterceptor implements CoreInterceptorInterface
         // TODO: use exception DTO
         match ($response[1]->details) {
             'users.user_not_found' => throw new NotFoundException(),
+            default => throw new \RuntimeException($status->getMessage()),
         };
     }
 }
