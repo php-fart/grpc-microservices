@@ -30,11 +30,9 @@ final readonly class UserService implements UsersServiceInterface
     #[Guarded]
     public function Get(GRPC\ContextInterface $ctx, GetRequest $in): GetResponse
     {
-        $user = $this->usersService->getUser(Uuid::fromString($in->getUuid()));
+//        $user = $this->usersService->getUser(Uuid::fromString($in->getUuid()));
 
-        return new GetResponse([
-            'user' => $this->userMapper->toMessage($user),
-        ]);
+        return new GetResponse();
     }
 
     #[Guarded]

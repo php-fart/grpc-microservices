@@ -47,9 +47,6 @@ class Kernel extends \Spiral\Framework\Kernel
 
             OpenTelemetryBootloader::class,
 
-            // Application specific logs
-            Bootloader\LoggingBootloader::class,
-
             // Sentry and Data collectors
             SentryReporterBootloader::class,
             Framework\DebugBootloader::class,

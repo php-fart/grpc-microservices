@@ -16,7 +16,7 @@ return [
     'interceptors' => [
         \App\Endpoint\GRPC\Interceptor\HandleExceptionsInterceptor::class,
         \Internal\Shared\gRPC\Interceptors\Incoming\ContextInterceptor::class,
-        \App\Endpoint\GRPC\Interceptor\GuardInterceptor::class,
-        \Internal\Shared\gRPC\Interceptors\Incoming\OpenTelemetryInterceptor::class,
+        //\App\Endpoint\GRPC\Interceptor\GuardInterceptor::class,
+        //\Internal\Shared\gRPC\Interceptors\Incoming\OpenTelemetryInterceptor::class,
     ],
 ];

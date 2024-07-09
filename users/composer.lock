@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b72d59fa73d1ccaa9b7a3ae7a3f14bb",
+    "content-hash": "f02d57ce7c6f474de247727c4bf9d9cc",
     "packages": [
         {
             "name": "brick/math",
@@ -2041,6 +2041,48 @@
                     "Internal\\Shared\\gRPC\\": "src",
                     "GRPC\\": "generated/GRPC",
                     "Generator\\": "generator"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "butschster",
+                    "email": "butschster@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is shared package",
+            "homepage": "https://github.com/spiral/framework",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "ms/temporal-shared",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../lib/temporal-shared",
+                "reference": "576fa54edb472467b2a09699840b8bbbbbeb58bd"
+            },
+            "require": {
+                "ext-grpc": "*",
+                "php": "^8.2",
+                "ramsey/uuid": "^4.7",
+                "spiral/boot": "^3.13",
+                "temporal-php/support": "^1.0",
+                "temporal/sdk": "^2.10"
+            },
+            "require-dev": {
+                "spiral/roadrunner-cli": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Internal\\Shared\\Temporal\\": "src"
                 }
             },
             "license": [
@@ -8591,6 +8633,76 @@
             "time": "2024-04-28T11:44:19+00:00"
         },
         {
+            "name": "temporal-php/support",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/temporal-php/support.git",
+                "reference": "b9ab40b1a830a1fcf78f992add0443bd6604f472"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/temporal-php/support/zipball/b9ab40b1a830a1fcf78f992add0443bd6604f472",
+                "reference": "b9ab40b1a830a1fcf78f992add0443bd6604f472",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "temporal/sdk": "^2.8"
+            },
+            "require-dev": {
+                "buggregator/trap": "^1.4",
+                "dereuromark/composer-prefer-lowest": "^0.1.10",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-arch": "^2.7",
+                "phpunit/phpunit": "^10.5",
+                "vimeo/psalm": "^5.23"
+            },
+            "suggest": {
+                "buggregator/trap": "For better debugging and protobuf messages dumping"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Temporal\\Support\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksei Gagarin (roxblnfk)",
+                    "homepage": "https://github.com/roxblnfk"
+                },
+                {
+                    "name": "Pavel Buchnev (butschster)",
+                    "homepage": "https://github.com/butschster"
+                }
+            ],
+            "description": "Helpers that simplify working with the Temporal PHP SDK",
+            "keywords": [
+                "helper",
+                "temporal"
+            ],
+            "support": {
+                "issues": "https://github.com/temporal-php/support/issues",
+                "source": "https://github.com/temporal-php/support/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://patreon.com/butschster",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://patreon.com/roxblnfk",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-04-05T20:19:53+00:00"
+        },
+        {
             "name": "temporal/sdk",
             "version": "v2.10.1",
             "source": {
@@ -12035,7 +12147,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ms/grpc-shared": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

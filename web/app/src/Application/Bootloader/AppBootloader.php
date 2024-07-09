@@ -14,5 +14,7 @@ use Spiral\Domain\GuardInterceptor;
 final class AppBootloader extends DomainBootloader
 {
     protected const SINGLETONS = [CoreInterface::class => [self::class, 'domainCore']];
-    protected const INTERCEPTORS = [GuardInterceptor::class];
+    protected const INTERCEPTORS = [
+        GuardInterceptor::class
+    ];
 }

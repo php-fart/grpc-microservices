@@ -13,11 +13,15 @@ class OrmDefaultE1267a582ec102c35ff8e1dc2a945344 extends Migration
     public function up(): void
     {
         $this->table('users')
-        ->addColumn('uuid', 'uuid', ['nullable' => false, 'defaultValue' => null])
-        ->addColumn('email', 'string', ['nullable' => false, 'defaultValue' => null, 'unique' => true, 'size' => 255])
-        ->addColumn('password', 'string', ['nullable' => false, 'defaultValue' => null, 'size' => 64])
-        ->setPrimaryKeys(['uuid'])
-        ->create();
+            ->addColumn('uuid', 'uuid', ['nullable' => false, 'defaultValue' => null])
+            ->addColumn(
+                'email',
+                'string',
+                ['nullable' => false, 'defaultValue' => null, 'unique' => true, 'size' => 255],
+            )
+            ->addColumn('password', 'string', ['nullable' => false, 'defaultValue' => null, 'size' => 64])
+            ->setPrimaryKeys(['uuid'])
+            ->create();
     }
 
     public function down(): void

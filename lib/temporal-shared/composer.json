@@ -1,0 +1,35 @@
+{
+  "name": "ms/temporal-shared",
+  "description": "This is shared package",
+  "keywords": [],
+  "homepage": "https://github.com/spiral/framework",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "butschster",
+      "email": "butschster@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "ext-grpc": "*",
+    "spiral/boot": "^3.13",
+    "ramsey/uuid": "^4.7",
+    "temporal/sdk": "^2.10",
+    "temporal-php/support": "^1.0"
+  },
+  "require-dev": {
+    "spiral/roadrunner-cli": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Internal\\Shared\\Temporal\\": "src"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

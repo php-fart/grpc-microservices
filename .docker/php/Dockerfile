@@ -18,8 +18,6 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV SERVICE_NAME=php-$SERVICE_NAME
 
 COPY --from=rr /usr/bin/rr /bin
-COPY ./proto /proto
-COPY ./lib /lib
 
 WORKDIR /app
 

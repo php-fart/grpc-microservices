@@ -30,6 +30,12 @@ class User
     public \DateTimeInterface $createdAt;
     public ?\DateTimeInterface $updatedAt = null;
 
+    #[Column(type: 'datetime', name: 'email_verified_at', nullable: true, default: null)]
+    public ?\DateTimeInterface $emailVerifiedAt = null;
+
+    #[Column(type: 'datetime', name: 'kyc_verified_at', nullable: true, default: null)]
+    public ?\DateTimeInterface $kycVerifiedAt = null;
+
     public function __construct(
         #[Column(type: 'uuid', name: 'uuid', primary: true, typecast: Uuid::class)]
         public Uuid $uuid,
@@ -37,6 +43,8 @@ class User
         public Email $email,
         #[Column(type: 'string(64)', name: 'password', typecast: PasswordHash::class)]
         public PasswordHash $password,
+        #[Column(type: 'uuid', name: 'subscription_uuid', nullable: true, default: null, typecast: Uuid::class)]
+        public ?Uuid $subscriptionUuid = null,
     ) {
         $now = new \DateTimeImmutable();
         $this->createdAt = $now;

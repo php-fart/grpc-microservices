@@ -21,7 +21,7 @@ class OrmDefaultDf800ef5ab04eee8c5dac20085b1430b extends Migration
             ->addColumn(
                 'updated_at',
                 'datetime',
-                ['nullable' => false, 'defaultValue' => null, 'withTimezone' => false],
+                ['nullable' => true, 'defaultValue' => null, 'withTimezone' => false],
             )
             ->update();
     }

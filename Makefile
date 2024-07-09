@@ -31,10 +31,18 @@ install:
 	done
 
 
+reinstall-temporal-shared:
+	for service in web users; do \
+		cd $$service; \
+		rm -rf vendor/ms/temporal-shared; \
+		composer require ms/temporal-shared; \
+		cd ..; \
+	done
+
 reinstall-grpc-shared:
 	for service in web users; do \
 		cd $$service; \
-		rm -rf vendor/ms; \
+		rm -rf vendor/ms/grpc-shared; \
 		composer require ms/grpc-shared; \
 		cd ..; \
 	done

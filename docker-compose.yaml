@@ -42,6 +42,7 @@ services:
       OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME:-php-web}
     volumes:
       - ./web:/app
+      - ./proto:/proto
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.ms-web.entrypoints=web"
@@ -66,6 +67,47 @@ services:
       OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME:-php-users}
     volumes:
       - ./users:/app
+      - ./proto:/proto
+    networks:
+      - ms-network
+
+  subscriptions:
+    container_name: ms-subscriptions
+    build:
+      context: .
+      args:
+        SERVICE_NAME: subscriptions
+      dockerfile: .docker/php/Dockerfile
+    env_file:
+      - .env
+    environment:
+      DB_CONNECTION: pgsql
+      DB_DATABASE: subscriptions
+      RR_LOG_LEVEL: ${RR_LOG_LEVEL:-debug}
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME:-php-subscriptions}
+    volumes:
+      - ./subscriptions:/app
+      - ./proto:/proto
+    networks:
+      - ms-network
+
+  notifications:
+    container_name: ms-notifications
+    build:
+      context: .
+      args:
+        SERVICE_NAME: notifications
+      dockerfile: .docker/php/Dockerfile
+    env_file:
+      - .env
+    environment:
+      DB_CONNECTION: pgsql
+      DB_DATABASE: notifications
+      RR_LOG_LEVEL: ${RR_LOG_LEVEL:-debug}
+      OTEL_SERVICE_NAME: ${OTEL_SERVICE_NAME:-php-notifications}
+    volumes:
+      - ./notifications:/app
+      - ./proto:/proto
     networks:
       - ms-network
 
@@ -168,8 +210,6 @@ services:
         condition: service_healthy
     networks:
       - ms-network
-    logging:
-      driver: none
 
   temporal-ui:
     container_name: ms-temporal-ui

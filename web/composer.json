@@ -15,6 +15,13 @@
             "options": {
                 "symlink": false
             }
+        },
+        {
+            "type": "path",
+            "url": "../lib/temporal-shared",
+            "options": {
+                "symlink": false
+            }
         }
     ],
     "require": {
@@ -23,6 +30,7 @@
         "ext-sockets": "*",
         "guzzlehttp/promises": "^2.0",
         "ms/grpc-shared": "dev-master",
+        "ms/temporal-shared": "dev-master",
         "open-telemetry/exporter-otlp": "^0.0.17",
         "php-http/httplug": "^2.4",
         "spiral-packages/yii-error-handler-bridge": "^1.1",

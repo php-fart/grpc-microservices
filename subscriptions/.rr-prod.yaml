@@ -1,0 +1,14 @@
+version: '3'
+
+rpc:
+  listen: 'tcp://127.0.0.1:6001'
+
+server:
+  command: 'php app.php'
+  relay: pipes
+
+logs:
+  level: ${RR_LOG_LEVEL:-warn}
+
+temporal:
+  address: 'temporal:7233'

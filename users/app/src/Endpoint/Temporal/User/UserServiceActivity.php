@@ -10,11 +10,12 @@ use App\Domain\User\ValueObject\Password;
 use Google\Protobuf\Timestamp;
 use GRPC\Services\Auth\v1\RegisterRequest;
 use GRPC\Services\Users\v1\User;
+use Internal\Shared\Temporal\TaskQueue;
 use Spiral\TemporalBridge\Attribute\AssignWorker;
 use Temporal\Activity\ActivityInterface;
 use Temporal\Activity\ActivityMethod;
 
-#[AssignWorker('user.service')]
+#[AssignWorker(TaskQueue::UserRegistration)]
 #[ActivityInterface(prefix: 'user.service.')]
 final class UserServiceActivity
 {
@@ -22,7 +23,7 @@ final class UserServiceActivity
         private UserServiceInterface $service,
     ) {}
 
-    #[ActivityMethod(name: 'register')]
+    #[ActivityMethod(name: 'register')] // user.service.register
     public function register(RegisterRequest $request): User
     {
         $user = $this->service->register(

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Temporal;
+namespace Internal\Shared\Temporal;
 
 use Temporal\Activity\ActivityOptions;
 use Temporal\Common\RetryOptions;
@@ -14,11 +14,7 @@ trait OptionsTrait
     protected const RETRY_ATTEMPTS = 10;
 
     /**
-     * Must be used for each workflow activity
-     *
      * @param string $taskQueue used task queue from TaskQueue
-     * @param int|null $timeout
-     * @param int|null $retryAttempts
      *
      * @return ActivityOptions
      */
